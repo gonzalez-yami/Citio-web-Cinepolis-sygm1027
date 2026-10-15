@@ -1,0 +1,185 @@
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="es"> <!-- Idioma: español -->
+<head>
+  <meta charset="UTF-8"> <!-- Permite la ñ y acentos -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Se ajusta al celular -->
+  <title>Cinépolis</title> <!-- Nombre de la pestaña -->
+  
+  <style>
+    html { scroll-behavior: smooth; } /* Bajada suave al dar clic */
+    body { margin: 0; font-family: Arial, sans-serif; background: #0b111e; color: #fff; } /* Fondo oscuro y letra blanca */
+    
+    /* MENÚ SUPERIOR */
+    header { background: #080d19; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 100; } /* Barra fija arriba */
+    .logo { font-size: 24px; font-weight: bold; } /* Texto del logo */
+    nav a { margin-right: 20px; font-size: 14px; font-weight: bold; color: #9ca3af; text-decoration: none; } /* Enlaces del menú */
+    nav a:hover { color: #fff; } /* Ilumina el botón al pasar el mouse */
+    .btn-club { background: #eab308; color: #000 !important; padding: 6px 12px; border-radius: 4px; } /* Botón amarillo */
+
+    /* ANUNCIO GRANDOTA */
+    .hero { background: linear-gradient(to right, #4c1d95, #080d19); padding: 40px 30px; display: flex; justify-content: space-between; align-items: center; } /* Fondo morado degradado */
+
+    /* CONTENIDO */
+    main { padding: 30px; max-width: 1100px; margin: auto; } /* Centra el contenido */
+    .section-title { font-size: 22px; font-weight: bold; margin: 40px 0 20px; scroll-margin-top: 90px; } /* Títulos de secciones */
+
+    /* CAJA DE CINE */
+    .cine-selector-container { background: #fff; border-radius: 8px; padding: 8px 15px; display: flex; align-items: center; gap: 12px; margin-bottom: 30px; border: 1px solid #e5e7eb; } /* Cuadro blanco */
+    .cine-icon-box { border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px; color: #2563eb; font-size: 12px; font-weight: bold; } /* Cuadro azul del ícono */
+    .cine-select { border: none; background: transparent; font-size: 15px; font-weight: bold; color: #1e293b; width: 100%; outline: none; cursor: pointer; } /* Menú de opciones */
+
+    /* TARJETAS */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; } /* 3 columnas iguales */
+    .card-movie { display: flex; flex-direction: column; } /* Tarjeta de película */
+    .card-movie img { width: 100%; height: 420px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); } /* Imagen con sombra */
+    .movie-info { padding: 12px 4px; } /* Espacio para el texto */
+    .movie-title { font-size: 16px; font-weight: bold; margin: 0 0 8px; } /* Título de la peli */
+    .tags { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; } /* Junta los datos */
+    .badge-rating, .badge-estreno, .badge-proximamente { font-size: 12px; font-weight: bold; } /* Clasificación y tiempo */
+    .sinopsis-text { font-size: 12px; color: #9ca3af; margin: 4px 0 0; font-weight: bold; letter-spacing: 0.5px; } /* Texto del género */
+
+    /* PIE DE PÁGINA */
+    footer { background: #040814; padding: 40px 30px; border-top: 1px solid #1e293b; margin-top: 60px; } /* Fondo del footer */
+    .footer-columns { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1100px; margin: auto; } /* Separa en columnas */
+    .footer-col { flex: 1; min-width: 160px; margin-bottom: 20px; } /* Ancho de cada columna */
+    .footer-col h4 { margin-top: 0; font-size: 15px; } /* Subtítulo del footer */
+    .footer-text { color: #9ca3af; font-size: 13px; margin-bottom: 8px; display: block; } /* Enlaces grises */
+    .footer-text-bold { color: #fff; font-weight: bold; } /* Texto en negrita */
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <header>
+    <div class="logo">cinépolis</div> <!-- Logo -->
+    <nav> <!-- Botones arriba -->
+      <a href="#cartelera">Cartelera</a> <!-- Va a cartelera -->
+      <a href="#proximos-estrenos">Próximos Estrenos</a> <!-- Va a estrenos -->
+      <a href="club.html" class="btn-club">Inicio de SesSion</a> <!-- Ir al club -->
+    </nav>
+  </header>
+
+  <!-- BANNER -->
+  <section class="hero">
+    <div>
+      <span style="color: #ec4899; font-weight: bold;">PREVENTA</span> <!-- Etiqueta rosa -->
+      <h1 style="font-size: 32px; margin: 10px 0;">El pasado viene por Leo</h1> <!-- Título principal -->
+      <p>La Venganza del Charro Negro - Próximamente sólo en cines</p> <!-- Subtítulo -->
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main>
+    <!-- Elegir cine -->
+    <div class="cine-selector-container">
+      <div class="cine-icon-box"> Cine</div> <!-- Ícono -->
+      <select class="cine-select"> <!-- Desplegable -->
+        <option value="">Elige tu cine...</option>
+        <option value="1">Cinépolis Las Misiones</option>
+        <option value="2">Cinépolis Las Torres</option>
+      </select>
+    </div>
+
+    <!-- CARTELERA -->
+    <div class="section-title" id="cartelera">Cartelera</div>
+    <div class="grid-3">
+      <div class="card-movie">
+        <img src="StreetFighter.jpg" alt="Street Fighter"> <!-- Póster -->
+        <div class="movie-info">
+          <h3 class="movie-title">Street Fighter</h3> <!-- Nombre -->
+          <div class="tags"><span class="badge-rating">B</span><span class="badge-estreno">115min</span></div> <!-- Datos -->
+          <p class="sinopsis-text">ACCIÓN AVENTURA</p> <!-- Género -->
+        </div>
+      </div>
+      <div class="card-movie">
+        <img src="Ballena.jpg" alt="La Caída De La Ballena">
+        <div class="movie-info">
+          <h3 class="movie-title">La Caída De La Ballena</h3>
+          <div class="tags"><span class="badge-rating">B</span><span class="badge-estreno">102min</span></div>
+          <p class="sinopsis-text">DRAMA MISTERIO</p>
+        </div>
+      </div>
+      <div class="card-movie">
+        <img src="Fauno.jpg" alt="El Laberinto Del Fauno">
+        <div class="movie-info">
+          <h3 class="movie-title">El Laberinto Del Fauno</h3>
+          <div class="tags"><span class="badge-rating">TBC</span><span class="badge-estreno">118min</span></div>
+          <p class="sinopsis-text">DRAMA FANTASÍA</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESTRENOS -->
+    <div class="section-title" id="proximos-estrenos">Próximos Estrenos</div>
+    <div class="grid-3">
+      <div class="card-movie">
+        <img src="Corazon.jpg" alt="El Corazón De La Bestia">
+        <div class="movie-info">
+          <h3 class="movie-title">El Corazón De La Bestia</h3>
+          <div class="tags"><span class="badge-rating">B</span><span class="badge-proximamente">110min</span></div>
+          <p class="sinopsis-text">ACCIÓN SUSPENSO</p>
+        </div>
+      </div>
+      <div class="card-movie">
+        <img src="Verity.jpg" alt="Verity">
+        <div class="movie-info">
+          <h3 class="movie-title">Verity: La Sombra De Un Engaño</h3>
+          <div class="tags"><span class="badge-rating">B15</span><span class="badge-proximamente">125min</span></div>
+          <p class="sinopsis-text">THRILLER MISTERIO</p>
+        </div>
+      </div>
+      <div class="card-movie">
+        <img src="Digger.jpg" alt="Digger">
+        <div class="movie-info">
+          <h3 class="movie-title">Digger</h3>
+          <div class="tags"><span class="badge-rating">B15</span><span class="badge-proximamente">105min</span></div>
+          <p class="sinopsis-text">AVENTURA ACCIÓN</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Cartelera</h4> <!-- Título columna -->
+        <span class="footer-text">Garantía Cinépolis</span> <!-- Enlace -->
+        <span class="footer-text">+Que Cine</span>
+        <span class="footer-text">Muestras y festivales</span>
+      </div>
+      <div class="footer-col">
+        <h4>Legales</h4>
+        <span class="footer-text">Términos y condiciones</span>
+        <span class="footer-text">Términos y condiciones Cineticket</span>
+        <span class="footer-text">Aviso de privacidad</span>
+        <span class="footer-text">Términos Cinecash</span>
+        <span class="footer-text">Términos y Condiciones Garantía Cinépolis</span>
+        <span class="footer-text">Formato de reclamo Garantía Cinépolis</span>
+      </div>
+      <div class="footer-col">
+        <h4>Políticas</h4>
+        <span class="footer-text">Políticas</span>
+        <span class="footer-text footer-text-bold">Línea de Denuncia</span>
+      </div>
+      <div class="footer-col">
+        <h4>¿Quiénes somos?</h4>
+        <span class="footer-text">Próximas Aperturas</span>
+        <span class="footer-text">Ventas Corporativas</span>
+        <span class="footer-text">Proveedores</span>
+        <span class="footer-text">Cinépolis Jobs</span>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <span class="footer-text footer-text-bold">Atención a clientes</span>
+        <span class="footer-text">T. 552 122 6060</span>
+        <span class="footer-text">aac@atencioncinepolis.com</span>
+        <span class="footer-text">@AyudaCinepolis</span>
+        <span class="footer-text">Déjanos tus comentarios</span>
+        <span class="footer-text">Facturación electrónica</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
